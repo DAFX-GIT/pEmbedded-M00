@@ -4,7 +4,7 @@
 
 int main () {
     // Configuration
-    DDRB |= (1 << PB0);     // PB5 (D13) en sortie → LED
+    DDRB |= (1 << PB0);     // PB0 (D1) en sortie → LED
     DDRD &= ~(1 << PD2);    // PD2 (D2) en entrée → Bouton
     PORTD |= (1 << PD2);    // Activer pull-up sur PD2
 

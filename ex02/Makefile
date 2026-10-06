@@ -1,6 +1,6 @@
 SOURCES=main.c
 BUILD_DIR = build
-PROGRAM_NAME = first_flash
+PROGRAM_NAME = light2
 BIN = $(BUILD_DIR)/$(PROGRAM_NAME).bin
 HEX = $(BUILD_DIR)/$(PROGRAM_NAME).hex
 
