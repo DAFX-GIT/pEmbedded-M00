@@ -1,10 +1,11 @@
+F_CPU = 16000000UL
 SOURCES=main.c
 BUILD_DIR = build
 PROGRAM_NAME = light2
 BIN = $(BUILD_DIR)/$(PROGRAM_NAME).bin
 HEX = $(BUILD_DIR)/$(PROGRAM_NAME).hex
 
-all: hex
+all: hex flash
 
 hex: $(HEX)
 
@@ -13,7 +14,7 @@ $(HEX): $(BIN)
 	avr-objcopy -j .text -j .data -O ihex $< $@
 
 $(BIN): $(SOURCES) | $(BUILD_DIR)
-	avr-gcc -mmcu=atmega328p -Wall -Os -o $@ $(SOURCES)
+	avr-gcc -mmcu=atmega328p -DF_CPU=$(F_CPU) -Wall -Os -o $@ $(SOURCES)
 	
 $(BUILD_DIR):
 	mkdir -pv $(BUILD_DIR)
