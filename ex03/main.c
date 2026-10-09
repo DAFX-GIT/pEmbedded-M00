@@ -9,7 +9,7 @@ int main () {
 
     while (1) {
 		_delay_ms(20); //debounce
-        if (!(PIND & (1 << PD2))) {    // Bouton pressé (LOW)
+		if (!(PIND & (1 << PD2))) {    // Bouton pressé (LOW)
             PORTB ^= (1 << PB0);}        // LED TOGGLE
 		while (!(PIND & (1 << PD2)));   // Attente du release
 		_delay_ms(20);
