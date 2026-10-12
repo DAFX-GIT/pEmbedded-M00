@@ -34,7 +34,7 @@ int main () {
             _delay_ms(20);                  //debounce
             while (!(PIND & (1 << PD2)));   // Attente du release du bouton
             _delay_ms(20);                  // debounce
-        } else if (!(PIND & (1 << PD4))) {    // SW1 Bouton pressé (LOW)
+        } else if (!(PIND & (1 << PD4))) {    // SW2 Bouton pressé (LOW)
             if (value > 0) value--;
             _delay_ms(20);                 	//debounce
             while (!(PIND & (1 << PD4)));   // Attente du release

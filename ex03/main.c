@@ -8,11 +8,12 @@ int main () {
     PORTD |= (1 << PD2);    // Activer pull-up sur PD2
 
     while (1) {
-		_delay_ms(20); //debounce
 		if (!(PIND & (1 << PD2))) {    // Bouton pressé (LOW)
-            PORTB ^= (1 << PB0);}        // LED TOGGLE
-		while (!(PIND & (1 << PD2)));   // Attente du release
-		_delay_ms(20);
+			PORTB ^= (1 << PB0);        // LED TOGGLE
+			_delay_ms(20); //debounce
+			while (!(PIND & (1 << PD2)));   // Attente du release
+			_delay_ms(20);
+		}
 
     }
 }
